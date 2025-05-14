@@ -35,16 +35,9 @@ export default function ResellerCustomer() {
 
 
       if (response.ok) {
-
-        toast.success(data.message, {
-          theme: "dark"
-        });
         setAllResellerCustomer(data.subscriptions);
-        console.log(data);
         setCurrentPage(data.page);
         setAllPage(data.totalPages)
-
-
       } else {
         switch (response.status) {
           case 500:
@@ -96,12 +89,7 @@ export default function ResellerCustomer() {
 
 
       if (response.ok) {
-        toast.success(data.message, {
-          theme: "dark"
-        });
         setTotalResellerSubscribtion(data.info.subscriptionsNum);
-        console.log(data);
-
       } else {
         switch (response.status) {
           case 500:
@@ -159,9 +147,8 @@ export default function ResellerCustomer() {
         setIsNewResellerCustomer(false)
         setTotalResellerSubscribtion(prev => Math.max(prev - 1, 0));
         clearInput()
+        setIsMacAddress("")
 
-        setIsMacAddress ("")
-      
       } else {
         switch (response.status) {
           case 500:
@@ -236,14 +223,14 @@ export default function ResellerCustomer() {
   return (
     <>
       <section className={`${styles.resellerCustomer_dashboard} pb-10 pl-20 px-9`}>
-        
-          <div className={`${styles.totalSubscription}  w-60 h-28 mt-24 m-auto`}>
-            <p className='text-white text-md pt-3 text-start pl-[1.5rem]'>Reseller Credit</p>
-            <div className='flex items-center justify-around font-semibold text-3xl text-white pt-1'>
-              <h1 className='text-2xl'>{totalResellerSubscribtion}</h1>
-            </div>
-           
+
+        <div className={`${styles.totalSubscription}  w-60 h-28 mt-24 m-auto`}>
+          <p className='text-white text-md pt-3 text-start pl-[1.5rem]'>Reseller Credit</p>
+          <div className='flex items-center justify-around font-semibold text-3xl text-white pt-1'>
+            <h1 className='text-2xl'>{totalResellerSubscribtion}</h1>
           </div>
+
+        </div>
         <div className={`${styles.resellerCustomer_options} mt-12 flex items-center justify-around`}>
           <h1 className='font-semibold text-[20px]'>Reseller Customer</h1>
           <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>

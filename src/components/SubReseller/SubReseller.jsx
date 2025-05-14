@@ -14,7 +14,7 @@ export default function SubReseller() {
   const [allSubReseller, setAllSubReseller] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [showPassword, setShowPassword] = useState(false);
- 
+
 
   function addSubReseller() {
     setIsNewSubReseller(true)
@@ -32,8 +32,10 @@ export default function SubReseller() {
           'Content-Type': 'application/json',
           'authorization': `wisOZ0${localStorage.getItem('authToken')}`
         },
-        body: JSON.stringify({ email, password
-          , userName: isName, subscriptionsNum: customerLimit })
+        body: JSON.stringify({
+          email, password
+          , userName: isName, subscriptionsNum: customerLimit
+        })
       });
 
       const data = await response.json();
@@ -74,9 +76,9 @@ export default function SubReseller() {
     }
   };
 
-  function handleAdd(e){
-  e.preventDefault();
-   
+  function handleAdd(e) {
+    e.preventDefault();
+
     if (isName == '' || email == '' || password == '' || customerLimit == '') {
       toast("All faildes is Rquired!")
     } else {
@@ -111,12 +113,7 @@ export default function SubReseller() {
 
 
       if (response.ok) {
-
-        toast.success(data.message, {
-          theme: "dark"
-        });
         setAllSubReseller(data.subResellers);
-        console.log(data);
       } else {
         switch (response.status) {
           case 500:

@@ -20,59 +20,54 @@ export default function Provider() {
     setIsGenerateCode(true)
   }
 
-    /////////////////////// START GET PROVIDER INFO FUNCTION////////////////
-    const getProviderInfo = async () => {
+  /////////////////////// START GET PROVIDER INFO FUNCTION////////////////
+  const getProviderInfo = async () => {
 
-      try {
-        const response = await fetch(`https://wish-omega-blush.vercel.app/reseller/info`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'authorization': `wisOZ0${localStorage.getItem('authToken')}`
-          },
-        });
-  
-        const data = await response.json();
-  
-  
-        if (response.ok) {
-          toast.success(data.message, {
-            theme: "dark"
-          });
-          setTotalProvider(data.info.subscriptionsNum);
-          console.log(data);
-  
-        } else {
-          switch (response.status) {
-            case 500:
-              toast.error(data.message, {
-                theme: "dark"
-              });
-            case 404:
-              toast.error(data.message, {
-                theme: "dark"
-              });
-              break;
-            default:
-              toast('An error occurred. Please try again.');
-          }
+    try {
+      const response = await fetch(`https://wish-omega-blush.vercel.app/reseller/info`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'authorization': `wisOZ0${localStorage.getItem('authToken')}`
+        },
+      });
+
+      const data = await response.json();
+
+
+      if (response.ok) {
+        setTotalProvider(data.info.subscriptionsNum);
+      } else {
+        switch (response.status) {
+          case 500:
+            toast.error(data.message, {
+              theme: "dark"
+            });
+          case 404:
+            toast.error(data.message, {
+              theme: "dark"
+            });
+            break;
+          default:
+            toast('An error occurred. Please try again.');
         }
-  
-      } catch (err) {
-        console.error("Error Saving Content:", err);
-      } finally {
-        setIsLoading(false)
       }
-    };
-  
-  
-  
-    useEffect(() => {
-      getProviderInfo()
-    }, [])
-  
-  
-    /////////////////////// END GET PROVIDER INFO FUNCTION///////////////////////////
+
+    } catch (err) {
+      console.error("Error Saving Content:", err);
+    } finally {
+      setIsLoading(false)
+    }
+  };
+
+
+
+  useEffect(() => {
+    getProviderInfo()
+  }, [])
+
+
+  /////////////////////// END GET PROVIDER INFO FUNCTION///////////////////////////
 
   /////////////////////// START GET RESELLER CUSTOMER FUNCTION////////////////
   const getProvider = async (page) => {
@@ -158,7 +153,7 @@ export default function Provider() {
           theme: 'dark'
         })
         setIsGenerateCode(false);
-      setTotalProvider(prev => Math.max(prev - 1, 0));
+        setTotalProvider(prev => Math.max(prev - 1, 0));
         clearInput()
       } else {
         switch (response.status) {
@@ -197,16 +192,16 @@ export default function Provider() {
     }
 
   }
-function clearInput(){
-  setIsPlaylist('')
-}
+  function clearInput() {
+    setIsPlaylist('')
+  }
 
   ////////////////////////END ADD  NEW RESELLER CUSTOMER/////////////////////////////////////
 
   ///////////////////////////START SEARCH RESELLER CUSTOMER////////////////////////////////////
   const getSearch = async (macAddress) => {
-   
-    
+
+
     setSearchProvider(macAddress)
     if (macAddress == '') {
       getProvider(currentPage)
