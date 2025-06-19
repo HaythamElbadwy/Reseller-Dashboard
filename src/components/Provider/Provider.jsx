@@ -24,7 +24,7 @@ export default function Provider() {
   const getProviderInfo = async () => {
 
     try {
-      const response = await fetch(`https://wish-omega-blush.vercel.app/reseller/info`, {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/reseller/info`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export default function Provider() {
   const getProvider = async (page) => {
 
     try {
-      const response = await fetch(`https://wish-omega-blush.vercel.app/reseller/getByCode?page=${page}`, {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/reseller/getByCode?page=${page}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -136,7 +136,7 @@ export default function Provider() {
 
     setIsLoading(true)
     try {
-      const response = await fetch(`https://wish-omega-blush.vercel.app/reseller/generateCode`, {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/reseller/generateCode`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -208,7 +208,7 @@ export default function Provider() {
       return
     }
     try {
-      const response = await fetch(`https://wish-omega-blush.vercel.app/reseller/searchByMac?macAddress=${macAddress}&type=provider`, {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/reseller/searchByMac?macAddress=${macAddress}&type=provider`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

@@ -26,7 +26,7 @@ export default function SubReseller() {
 
     setIsLoading(true)
     try {
-      const response = await fetch(`https://wish-omega-blush.vercel.app/reseller/addSubReseller`, {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/reseller/addSubReseller`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ export default function SubReseller() {
   const getSubReseller = async () => {
 
     try {
-      const response = await fetch(`https://wish-omega-blush.vercel.app/reseller/getSubReseller`, {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/reseller/getSubReseller`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

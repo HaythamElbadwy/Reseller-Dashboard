@@ -2,8 +2,6 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import styles from './Sidebar.module.css';
-import flagEn from '../../assets/Image/FlagKingdom.svg'
-import flagAr from '../../assets/Image/egypt.png'
 import logo from '../../assets/Image/wishlogo.png'
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -54,7 +52,7 @@ useEffect(() => {
 
   const resellerInfo = async () => {
     try {
-      const response = await fetch('https://wish-omega-blush.vercel.app/reseller/info', {
+      const response = await fetch('https://wish-seven-gules.vercel.app/reseller/info', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

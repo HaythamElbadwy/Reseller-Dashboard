@@ -23,7 +23,7 @@ export default function Login() {
 
     // e.preventDefault();
     try {
-      const response = await fetch('https://wish-omega-blush.vercel.app/reseller/login', {
+      const response = await fetch('https://wish-seven-gules.vercel.app/reseller/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
