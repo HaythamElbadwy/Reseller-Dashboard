@@ -23,7 +23,7 @@ export default function ResellerCustomer() {
   const getResellerCustomer = async (page) => {
 
     try {
-      const response = await fetch(`https://wish-seven-gules.vercel.app/reseller/getSubscriptions?page=${page}`, {
+      const response = await fetch(`https://wishtv.onrender.com/reseller/getSubscriptions?page=${page}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ export default function ResellerCustomer() {
   const getResellerInfo = async () => {
 
     try {
-      const response = await fetch(`https://wish-seven-gules.vercel.app/reseller/info`, {
+      const response = await fetch(`https://wishtv.onrender.com/reseller/info`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ export default function ResellerCustomer() {
 
     setIsLoading(true)
     try {
-      const response = await fetch(`https://wish-seven-gules.vercel.app/reseller/newSubscription`, {
+      const response = await fetch(`https://wishtv.onrender.com/reseller/newSubscription`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -198,7 +198,7 @@ export default function ResellerCustomer() {
       return
     }
     try {
-      const response = await fetch(`https://wish-seven-gules.vercel.app/reseller/searchByMac?macAddress=${macAddress}&type=reseller`, {
+      const response = await fetch(`https://wishtv.onrender.com/reseller/searchByMac?macAddress=${macAddress}&type=reseller`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

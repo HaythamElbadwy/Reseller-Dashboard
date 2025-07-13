@@ -48,11 +48,11 @@ export default function Sidebar() {
   // };
 useEffect(() => {
   checkAuthorization()
-}, [])
+}, []);
 
   const resellerInfo = async () => {
     try {
-      const response = await fetch('https://wish-seven-gules.vercel.app/reseller/info', {
+      const response = await fetch('https://wishtv.onrender.com/reseller/info', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
